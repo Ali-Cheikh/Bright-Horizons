@@ -18,7 +18,7 @@ $(document).ready(function () {
         const formData = new FormData(this);
 
         $.ajax({
-            url: 'https://script.google.com/macros/s/AKfycbyJMpnUKnRCZDC9cmOzja65EC1zZuJpShldPruzR50iY168_8RRZIw9PUz6K465tvA/exec',
+            url: 'https://script.google.com/macros/s/AKfycbzue9BYECHkTzB1rsFYlxRtdvPs3K6SmjuDpZbUcWoR9kbVm2oP72EHi5ve-qiteXY9/exec',
             method: 'POST',
             data: formData,
             processData: false,
