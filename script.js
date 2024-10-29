@@ -1,5 +1,5 @@
-$(document).ready(function () {
-    $('#contact-form').on('submit', function (e) {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
 
         Swal.fire({
@@ -14,38 +14,37 @@ $(document).ready(function () {
         });
 
         const formData = new FormData(this);
+        const url = 'https://script.google.com/macros/s/AKfycbxuPXcmS44xT9KKEPfHwLkTJ21FvmKBK1_pzclwUV1nULGo0u-3DE9aK0P3Rt4gjSZa/exec';
 
-        $.ajax({
-            url: 'https://script.google.com/macros/s/AKfycbyBeww-F6ga6GDq7F7z1S8VR9ZLKhl5HIk6AXUMIcS0_AIDXDmz99qudarXKR43sVQM/exec',
+        fetch(url, {
             method: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function (response) {
-                Swal.close(); // Close loading alert
-                if (response.result === 'success') {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Form submitted!',
-                        text: 'You are registered! We will be glad to have you.',
-                    });
-                    $('#contact-form')[0].reset(); // Reset form after successful submission
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Submission Failed',
-                        text: 'There was an issue with your submission. Please try again later.',
-                    });
-                }
-            },
-            error: function () {
-                Swal.close(); // Close loading alert
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            Swal.close();
+            if (data.result === 'success') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Form submitted!',
+                    text: 'You are registered. We will be glad to have you.',
+                });
+                this.reset(); // Reset form after successful submission
+            } else {
                 Swal.fire({
                     icon: 'error',
                     title: 'Submission Failed',
-                    text: 'There was an error registering you. Please check your network connection or try again later.',
+                    text: data.error || 'There was an error registering you. Please try again later.',
                 });
             }
+        })
+        .catch(() => {
+            Swal.close();
+            Swal.fire({
+                icon: 'error',
+                title: 'Submission Failed',
+                text: 'There was an error registering you. Please check your network connection or try again later.',
+            });
         });
     });
 });
