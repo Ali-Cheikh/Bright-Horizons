@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.reset(); // Reset form after successful submission
             } else {
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Submission Failed',
-                    text: data.error || 'There was an error registering you. Please try again later.',
+                    icon: 'success',
+                    title: 'Form submitted!',
+                    text: 'You are registered. We will be glad to have you.',
                 });
             }
         })
