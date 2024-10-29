@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $('#contact-form').on('submit', function (e) {
         e.preventDefault();
@@ -12,41 +11,39 @@ $(document).ready(function () {
             },
             showConfirmButton: false,
             allowOutsideClick: false,
-            
         });
 
         const formData = new FormData(this);
 
         $.ajax({
-            url: 'https://script.google.com/macros/s/AKfycbxCKUkPnWifPBqJZRYKFNAXHH8Jm3kZ5-aZKydyv8PssNRgXWNRCx-GO11ld93kqgGi/exec',
+            url: 'https://script.google.com/macros/s/AKfycbyBeww-F6ga6GDq7F7z1S8VR9ZLKhl5HIk6AXUMIcS0_AIDXDmz99qudarXKR43sVQM/exec',
             method: 'POST',
             data: formData,
             processData: false,
             contentType: false,
             success: function (response) {
+                Swal.close(); // Close loading alert
                 if (response.result === 'success') {
                     Swal.fire({
                         icon: 'success',
                         title: 'Form submitted!',
-                        text: 'Your are Registered We will be glad to have you.',
-                        
+                        text: 'You are registered! We will be glad to have you.',
                     });
                     $('#contact-form')[0].reset(); // Reset form after successful submission
                 } else {
                     Swal.fire({
-                        icon: 'success',
-                        title: 'Form submitted!',
-                        text: 'Your are Registered We will be glad to have you.',
-                        
+                        icon: 'error',
+                        title: 'Submission Failed',
+                        text: 'There was an issue with your submission. Please try again later.',
                     });
                 }
             },
             error: function () {
+                Swal.close(); // Close loading alert
                 Swal.fire({
                     icon: 'error',
                     title: 'Submission Failed',
-                    text: 'There was an error Registering you. Please check your network connection or try again later.',
-                    
+                    text: 'There was an error registering you. Please check your network connection or try again later.',
                 });
             }
         });
