@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info Session on English for Communication</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom colors based on your preferences */
+    .bg-custom { background-color: #162949; }
+    .text-headline { color: #FA8E2C; }
+    .text-title { color: #A7A5AB; }
+    .text-sub { color: #E9C935; }
+    .text-body { color: #FFFFFF; }
+  </style>
+</head>
+<body class="bg-custom antialiased">
+
+  <!-- Header with Logo -->
+  <header class="bg-[#162949] py-6">
+    <div class="max-w-7xl mx-auto flex justify-center">
+      <img src="https://files.oaiusercontent.com/file-IHuEeSLEtFcekrCpzTeWLXyD?se=2024-10-29T22%3A23%3A56Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dimage.png&sig=%2BOVm7KuZdbmh%2BE8eWbi5rMRc4Mgd%2BgAiFMwdvBiUzOY%3D" alt="Bright Horizons Logo" class="w-100 h-auto rounded-lg"> <!-- Replace with your logo path -->
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex flex-col items-center justify-center min-h-screen p-6">
+    <section class="max-w-lg w-full bg-[#162949] p-8 border border-gray-200 rounded-lg shadow-lg text-center">
+      
+      <!-- Countdown Timer -->
+      <h2 class="text-3xl font-bold text-headline mb-4">Learn English for Communication and Get Your Certificate</h2>
+      <p class="text-lg text-sub mb-6 text-body">Register now for our exclusive session on enhancing English communication skills!</p>
+      
+      <div class="text-center text-2xl font-semibold text-headline mb-6" id="countdown">
+        <!-- Countdown will appear here -->
+      </div>
+
+      <!-- Registration Form -->
+      <form action="YOUR_FORM_ENDPOINT" method="POST" class="space-y-6">
+
+        <!-- Personal Details -->
+        <div>
+          <label for="fullName" class="block text-title font-medium mb-1">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" required class="w-full border-gray-300 rounded-md shadow-sm focus:ring-[#FA8E2C] focus:border-[#FA8E2C] p-2">
+        </div>
+
+        <div>
+          <label for="email" class="block text-title font-medium mb-1">Email Address *</label>
+          <input type="email" id="email" name="email" required class="w-full border-gray-300 rounded-md shadow-sm focus:ring-[#FA8E2C] focus:border-[#FA8E2C] p-2">
+        </div>
+
+        <div>
+          <label for="phone" class="block text-title font-medium mb-1">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required class="w-full border-gray-300 rounded-md shadow-sm focus:ring-[#FA8E2C] focus:border-[#FA8E2C] p-2">
+        </div>
+
+        <!-- Headline Section -->
+        <div class="bg-[#162949] rounded-md p-4 text-center border border-[#E9C935]">
+          <h3 class="text-xl font-semibold text-title">English for Communication</h3>
+          <p class="text-sub mt-2 text-body">This session will cover essential communication skills in English, including speaking, listening, reading, and writing.</p>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center mt-6">
+          <button 
+            type="submit" 
+            style="
+              width: 100%; 
+              background-color: #FA8E2C; 
+              color: #ffffff; 
+              font-weight: 600; 
+              padding: 12px 0; 
+              border-radius: 8px; 
+              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+              transition: background-color 0.3s ease;"
+            onmouseover="this.style.backgroundColor='#E07B26'"
+            onmouseout="this.style.backgroundColor='#FA8E2C'">
+            Register Now
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#162949] py-6 text-center mt-6">
+    <div class="max-w-lg mx-auto text-title">
+      <p>&copy; 2024 Bright Horizons Center. All rights reserved.</p>
+      <p>Contact Us: (216) 2736 0463 | hamdi.dkhil@hotmail.fr</p>
+      <div class="mt-4">
+        <a href="https://facebook.com" target="_blank" class="text-title mx-2">Facebook</a>
+        <a href="https://twitter.com" target="_blank" class="text-title mx-2">Twitter</a>
+        <a href="https://instagram.com" target="_blank" class="text-title mx-2">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Countdown Script -->
+  <script>
+    // Set the target date for the info session
+    const targetDate = new Date("2024-11-05T18:00:00").getTime(); // Update to your desired date
+
+    // Update the countdown every 1 second
+    const countdownFunction = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      // Calculate time left
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById("countdown").innerHTML = `Starts In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      // If the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "The session has started!";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
