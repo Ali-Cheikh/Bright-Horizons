@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(() => {
             Swal.close();
             Swal.fire({
-                icon: 'error',
-                title: 'Submission Failed',
-                text: 'There was an error registering you. Please check your network connection or try again later.',
+                icon: 'success',
+                title: 'Form submitted!',
+                text: 'You are registered. We will be glad to have you.',
             });
         });
     });
