@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         const formData = new FormData(this);
-        const url = 'https://script.google.com/macros/s/AKfycbxuPXcmS44xT9KKEPfHwLkTJ21FvmKBK1_pzclwUV1nULGo0u-3DE9aK0P3Rt4gjSZa/exec';
+        const url = 'https://script.google.com/macros/s/AKfycbzptQSa9m8FfYIkI7MhvbJcrHKYmox1Q5aRKvA4jhYEonLv5D8GrFR0sUa1oQ26PPk6/exec';
 
         fetch(url, {
             method: 'POST',
