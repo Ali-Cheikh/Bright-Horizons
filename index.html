@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Info Session on English for Communication</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Primary Meta Tags -->
+    <title>Info Session on English for Communication</title>
+    <meta name="title" content="Info Session on English for Communication" />
+    <meta name="description" content="Learn English for Communication and Get Your Certificate" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://brighthorizons.netlify.app/" />
+    <meta property="og:title" content="Info Session on English for Communication" />
+    <meta property="og:description" content="Learn English for Communication and Get Your Certificate" />
+    <meta property="og:image" content="logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://brighthorizons.netlify.app/" />
+    <meta property="twitter:title" content="Info Session on English for Communication" />
+    <meta property="twitter:description" content="Learn English for Communication and Get Your Certificate" />
+    <meta property="twitter:image" content="logo.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- Meta Tags Generated with https://metatags.io -->
   <style>
     /* Custom colors based on your preferences */
     .bg-custom { background-color: #162949; }
@@ -36,7 +58,7 @@
       </div>
 
       <!-- Registration Form -->
-      <form action="YOUR_FORM_ENDPOINT" method="POST" class="space-y-6">
+      <form  id="contact-form" method="post"  class="space-y-6">
 
         <!-- Personal Details -->
         <div>
@@ -86,41 +108,13 @@
   <footer class="bg-[#162949] py-6 text-center mt-6">
     <div class="max-w-lg mx-auto text-title">
       <p>&copy; 2024 Bright Horizons Center. All rights reserved.</p>
-      <p>Contact Us: (216) 2736 0463 | hamdi.dkhil@hotmail.fr</p>
+      <p>Contact Us: (216) 2736 0463 | hamdi.dkhil@hotmail.fr <br><i tyle='font-size:24px' class='fas'>&#xf3c5;</i> 🇬🇧🇹🇳🇺🇸</p>
       <div class="mt-4">
-        <a href="https://facebook.com" target="_blank" class="text-title mx-2">Facebook</a>
-        <a href="https://twitter.com" target="_blank" class="text-title mx-2">Twitter</a>
-        <a href="https://instagram.com" target="_blank" class="text-title mx-2">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100070364739783&mibextid=LQQJ4d" target="_blank" class="text-title mx-2">Facebook</a>
+        <a href="https://www.instagram.com/bright_horizons1" target="_blank" class="text-title mx-2">Instagram</a>
       </div>
     </div>
   </footer>
-
-  <!-- Countdown Script -->
-  <script>
-    // Set the target date for the info session
-    const targetDate = new Date("2024-11-05T18:00:00").getTime(); // Update to your desired date
-
-    // Update the countdown every 1 second
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      // Calculate time left
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the countdown
-      document.getElementById("countdown").innerHTML = `Starts In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      // If the countdown is over, display a message
-      if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "The session has started!";
-      }
-    }, 1000);
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
