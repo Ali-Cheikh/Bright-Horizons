@@ -22,13 +22,16 @@ const increment = () => {
 
 function setInterest(interest) {
   const feedbackDiv = document.getElementById("feedbackDiv");
+  const inputDiv = document.getElementById("inputDiv");
 
   if (interest === "not-interested") {
     // Show the textarea if "Not Interested" is selected
+    inputDiv.classList.add("hidden");
     feedbackDiv.classList.remove("hidden");
   } else {
     // Hide the textarea if "Interested" is selected
     feedbackDiv.classList.add("hidden");
+    inputDiv.classList.remove("hidden");
   }
 }
 document.addEventListener("DOMContentLoaded", function () {
