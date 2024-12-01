@@ -1,0 +1,55 @@
+body {
+    overflow-x: hidden;
+}
+
+.bg-custom { background-color: #162949; }
+.text-headline { color: #FA8E2C; }
+.text-title { color: #A7A5AB; }
+.text-sub { color: #E9C935; }
+.text-body { color: #FFFFFF; }
+
+
+/* Carousel Styles */
+.slick-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+
+@media (min-width:10px) {
+
+    .slick-prev::before,
+    .slick-next::before {
+        display: none;
+    }
+}
+
+.slick-dots li button:before {
+    color: #ff7b00;
+    /* Dot color */
+}
+
+/* Rectangular image styling */
+.carousel img {
+    height: 200px;
+    /* Adjust height for rectangle */
+    object-fit: cover;
+    /* Ensure images cover the area without distortion */
+}
+
+/* Hide elements */
+.hidden {
+    display: none;
+}
+
+a[type="tel"] {
+    width: 100%;
+    background-color: #FA8E2C;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 0;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
