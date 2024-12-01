@@ -1,0 +1,61 @@
+.bg-custom {
+    background-color: #162949;
+}
+
+.text-headline {
+    color: #FA8E2C;
+}
+
+.text-title {
+    color: #A7A5AB;
+}
+
+.text-sub {
+    color: #E9C935;
+}
+
+.text-body {
+    color: #FFFFFF;
+}
+
+.custom-input-container {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    /* Equivalent to shadow-sm */
+    border: 1px solid #d1d5db;
+    /* Default border-gray-300 */
+    border-radius: 0.375rem;
+    /* Equivalent to rounded-md */
+    display: flex;
+    align-items: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    /* Smooth transitions */
+}
+
+.custom-input-container:focus-within {
+    border-color: #FA8E2C;
+    /* Focus border color */
+    box-shadow: 0 0 0 2px rgba(250, 142, 44, 0.5);
+    /* Focus ring effect */
+}
+
+.radio-btn input:checked+span {
+    background-color: #FA8E2C;
+    /* Highlight selected button */
+    color: white;
+    border-color: #FA8E2C;
+}
+
+span:hover {
+    background-color: #FA8E2C;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #FA8E2C;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 0;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
