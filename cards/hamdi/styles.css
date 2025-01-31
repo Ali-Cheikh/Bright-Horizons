@@ -1,9 +1,4 @@
 
-
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
-
-
-
 * {
   padding: 0;
   margin: 0;
@@ -16,11 +11,12 @@ a {
 }
 
 body {
+  color: #ffffff;
   display: flex;
   justify-content: center;
+  background-color: #162949;
   align-items: center;
-  background: #000000;
-  font-family: "Nunito", sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
   overflow-y: scroll;
@@ -79,13 +75,15 @@ body {
 
 .head-section p {
   font-size: 1.2rem;
+  color: #A7A5AB;
 }
 
 .bio {
   margin-bottom: 1rem;
 }
-.social-links ul {
+.social-links ul li p  {
   list-style: none;
+  color: #ffffff;
 }
 
 .social-links ul li {
@@ -99,14 +97,14 @@ body {
 }
 
 .social-links ul li:hover {
-  background: #ffffff33;
+  color: #A7A5AB;
 }
 
 
 .social-links ul li a {
   display: flex;
   align-items: center;
-  color: #ffffff;
+  color: #E9C935;
   padding: 1rem;
   text-decoration: none;
 }
@@ -126,7 +124,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 0.75rem 1.5rem;
-  background-color: #ffffff1a; /* Primary color for the button */
+  background-color:#FA8E2C; /* Primary color for the button */
   color: #ffffff;
   font-size: 1rem;
   border: none;
@@ -138,7 +136,7 @@ body {
 }
 
 #saveContactBtn:hover {
-  background-color: #3570bd;
+  background-color: #A7A5AB;
   transform: translateY(-2px);
 }
 
@@ -184,4 +182,60 @@ body {
 }
 .twitter {
   background-color: #1da1f2;
+}
+.hours-widget {
+  position: relative;
+  background: #ffffff1a;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: background 0.25s ease;
+  border: 1px solid #ffff;
+  box-shadow: 0 0 20px #ffffff33;
+  margin-bottom: 1rem;
+}
+
+.hours-trigger {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.hours-trigger i {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+
+.hours-trigger:hover {
+  background: #ffffff33;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  background: #162949;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 0.75rem;
+  border: 1px solid #ffffff33;
+  color: #ffffff;
+}
+
+.schedule-table thead {
+  background: #ffffff1a;
+}
+
+.schedule-table tr:nth-child(even) {
+  background: #ffffff0a;
+}
+
+.schedule-table .closed {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.working-hours-table {
+  padding: 0 1rem 1rem 1rem;
 }
