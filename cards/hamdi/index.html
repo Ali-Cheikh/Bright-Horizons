@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamdi Dkhil</title>
+    <!-- Meta tags for SEO and social sharing -->
+    <meta name="description" content="Personal profile page with social media links, contact buttons, and a brief introduction." />
+    <meta name="keywords" content="Hamdi Dkhil, personal profile, social media links, contact" />
+    <meta name="author" content="Ali Cheikh" />
+    <link rel="icon" href="https://Bright Horizons.net/assets/img/logo.png" sizes="144x144">
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Hamdi Dkhil - English Teacher" />
+    <meta property="og:description" content="Hamdi Dkhil is a talented english teacher and the founder of Bright Horizons, a company dedicated to enhancing English language education in Tunisia." />
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1454420658444713990/hemTFy18_400x400.jpg" />
+    <meta property="og:url" content="https://hamdi.Bright Horizons.net" />
+    <meta property="og:type" content="website" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" as="image" href="https://pbs.twimg.com/profile_images/1454420658444713990/hemTFy18_400x400.jpg" />
+  </head>
+  <body style="overflow-x: hidden;">
+
+
+    <div class="container">
+      <div class="head-section animate__animated animate__fadeInDown">
+        <img src="https://pbs.twimg.com/profile_images/1454420658444713990/hemTFy18_400x400.jpg" alt="profile-picture" class="animate__animated animate__fadeInLeft" />
+        <h1 class="animate__animated animate__fadeInRight">Hamdi Dkhil</h1>
+        <p class="animate__animated animate__fadeInUp">
+          Where <b>Innovation</b> Meets <b>Education.</b>
+        </p>
+      </div>
+
+      <div class="social-links animate__animated animate__fadeInUp">
+        <ul>
+          <li class="website animate__animated animate__bounceIn" style="animation-delay: 0.2s;">
+            <a href="https://Bright Horizons.net/" target="_blank">
+              <i class="fas fa-globe"></i>
+              <span>
+                <h3>Bright Horizons Course Books</h3>
+                <p>Visit my course books website.</p>
+              </span>
+            </a>
+          </li>
+          <li class="animate__animated animate__bounceIn" style="animation-delay: 0.4s;">
+            <a href="https://www.youtube.com/@Bright HorizonsCoursebooks/search?query=Bright Horizons%206th%20Grade%20%7C%20Grammar%20Explainers" target="_blank">
+              <i class="fab fa-youtube"></i>
+              <span>
+                <h3>Bright Horizons Channel</h3>
+                <p>Watch our videos for innovative english teaching.</p>
+              </span>
+            </a>
+          </li>
+          <li class="linkedin animate__animated animate__bounceIn" style="animation-delay: 0.6s;">
+            <a href="#i forgot my password" target="_self">
+              <i class="fab fa-linkedin"></i>
+              <span>
+                <h3>LinkedIn</h3>
+                <p>Connect with me on LinkedIn.</p>
+              </span>
+            </a>
+          </li>
+          <li class="instagram animate__animated animate__bounceIn" style="animation-delay: 0.8s;">
+            <a href="https://www.instagram.com/sir_hamdii" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <span>
+                <h3>Instagram</h3>
+                <p>Follow me for more updates.</p>
+              </span>
+            </a>
+          </li>
+          <li class="facebook animate__animated animate__bounceIn" style="animation-delay: 1s;">
+            <a href="https://www.facebook.com/hamdi?mibextid=LQQJ4d" target="_blank">
+              <i class="fab fa-facebook"></i>
+              <span>
+                <h3>Facebook</h3>
+                <p>Check out my Facebook page.</p>
+              </span>
+            </a>
+          </li>
+          <li class="twitter animate__animated animate__bounceIn" style="animation-delay: 1.2s;">
+            <a href="https://x.com/hamdidkhil" target="_blank">
+              <i class="fab fa-x"></i>
+              <span>
+                <h3>X</h3>
+                <p>Follow me on X "Twitter".</p>
+              </span>
+            </a>
+          </li>
+          <li class="button animate__animated animate__bounceIn" style="animation-delay: 1.4s;">
+            <button id="saveContactBtn" class="btn btn-primary">
+              <i class="fas fa-address-book"></i>
+              <span>
+                <h3>My Contacts</h3>
+                <p>Click me to add my contacts to your phone.</p>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      document.getElementById("saveContactBtn").addEventListener("click", async () => {
+        try {
+          if ('contacts' in navigator && 'ContactsManager' in window) {
+            await navigator.contacts.save({
+              name: "Hamdi Dkhil",
+              tel: "27360463",
+              email: "hamdi.dkhil@hotmail.fr"
+            });
+            alert("Contact saved successfully!");
+          } else {
+            // If the Contacts API is not supported, show the info in SweetAlert
+            showContactInfo();
+          }
+        } catch (error) {
+          console.error("Error saving contact:", error);
+          showContactInfo();
+        }
+      });
+      function showContactInfo() {
+        Swal.fire({
+          html: `
+            <h1 style="margin-bottom: 15px;">Contact Information</h1><hr><br>
+            <div style="text-align: center;">
+              <img src="https://pbs.twimg.com/profile_images/1454420658444713990/hemTFy18_400x400.jpg" 
+                  alt="Profile Picture" 
+                  style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px;">
+              <div style="font-size: 1.1rem; color: #ffffff">
+                <div style="margin-bottom: 8px;">
+                  <strong style="color: #ffffffa0;">Name:</strong> 
+                  <span style="color: #ffffffdd; font-weight: 500;">Hamdi Dkhil</span>
+                </div>
+                <div style="margin-bottom: 8px;">
+                  <strong style="color: #ffffffa0;">Phone:</strong> 
+                  <a href="tel:+21627360463" style="color:white; font-weight: 500; text-decoration: none;">
+                    95883871
+                  </a>
+                </div>
+                <div>
+                  <strong style="color: #ffffffa0;">Email:</strong> 
+                  <a href="mailto:hamdi.dkhil@hotmail.fr" style="color:white; font-weight: 500; text-decoration: none;">
+                    hamdidkhil@hotmail.fr
+                  </a>
+                </div>
+              </div>
+            </div>
+          `,
+          confirmButtonText: "Close",
+          confirmButtonColor: "#4a90e2",
+          background: "#000",
+          showCancelButton: true,
+          cancelButtonText: "Book a Meeting",
+          cancelButtonColor: "#34c759",
+          customClass: {
+            popup: "swal-wide"
+          }
+        }).then((result) => {
+          if (result.dismiss === Swal.DismissReason.cancel) {
+            window.open("https://app.cal.com/hamdidkhil", "_blank");
+          }
+        });
+
+      }
+    </script>
+  </body>
+</html>
