@@ -1,11 +1,10 @@
-// Swal.fire({
-//     icon: 'success',
-//     title: 'Session was a success',
-//     html: 'We have proceeded with the info-session successfully. For those who are interested and were not with us, <br><a href="tel:+21627360463" style="font-weight: bold; color: #3085d6;">contact us</a> or <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1155.2917921602254!2d10.760812705893601!3d34.76414285219767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1301d30077f72b9d%3A0x5a60405f0fc33ee3!2sBright%20Horizons%20Center!5e1!3m2!1sen!2stn!4v1730245499371!5m2!1sen!2stn" target="_blank" style="font-weight: bold; color: #3085d6;">visit our facility</a>.',
-//     allowOutsideClick: false,
-//     showConfirmButton: false
-// });
-// Set the target date for the info session
+Swal.fire({
+    icon: 'success',
+    title: 'Vote ended ',
+    html: 'For those who are interested and didn\'t get the chance to vote, <br><a href="tel:+21627360463" style="font-weight: bold; color: #3085d6;">contact us</a> or <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1155.2917921602254!2d10.760812705893601!3d34.76414285219767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1301d30077f72b9d%3A0x5a60405f0fc33ee3!2sBright%20Horizons%20Center!5e1!3m2!1sen!2stn!4v1730245499371!5m2!1sen!2stn" target="_blank" style="font-weight: bold; color: #3085d6;">visit our facility</a>.',
+    allowOutsideClick: false,
+    showConfirmButton: false
+});
 
 const decrement = () => {
   const input = document.getElementById("quantity");
