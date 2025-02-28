@@ -42,7 +42,7 @@
               <span>
                 <h3>LinkedIn</h3>
                 <p>Connect with me on LinkedIn.</p>
-              </span>
+           </span>
             </a>
           </li>
           <li class="facebook animate__animated animate__bounceIn" style="animation-delay: 0.4s;">
@@ -128,7 +128,7 @@
       </div>
     </div>
     <script>
-    function showContactInfo() {
+   function showContactInfo() {
       Swal.fire({
         html: `
           <h1 style="margin-bottom: 15px;">Contact Information</h1><hr><br>
@@ -144,7 +144,7 @@
               <div style="margin-bottom: 8px;">
                 <strong style="color: #ffffffa0;">Phone:</strong> 
                 <a href="tel:+21627360463" style="color:white; font-weight: 500; text-decoration: none;">
-                  27360463
+                  +216 27 360 463
                 </a>
               </div>
               <div>
@@ -167,28 +167,34 @@
       }).then(async (result) => {
         if (result.isConfirmed) {
           try {
-            if ('contacts' in navigator && 'ContactsManager' in window) {
-              // Modern Contacts API
-              await navigator.contacts.save({
+            // Check if running on mobile device
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+              // For mobile devices, create direct links for adding contact
+              const contact = {
                 name: "Hamdi Dkhil",
-                tel: "+21627360463",
+                phone: "+21627360463",
                 email: "hamdi.dkhil@hotmail.fr"
-              });
-              Swal.fire({
-                title: 'Success!',
-                text: 'Contact saved successfully',
-                icon: 'success',
-                background: '#162949',
-                confirmButtonColor: "#4a90e2"
-              });
+              };
+
+              // iOS specific deep link
+              if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                window.location.href = `contacts://add-contact?name=${encodeURIComponent(contact.name)}&phone=${encodeURIComponent(contact.phone)}&email=${encodeURIComponent(contact.email)}`;
+              } 
+              // Android specific intent
+              else if (/Android/i.test(navigator.userAgent)) {
+                window.location.href = `intent://contacts/create#Intent;scheme=android-app;package=com.android.contacts;S.name=${encodeURIComponent(contact.name)};S.phone=${encodeURIComponent(contact.phone)};S.email=${encodeURIComponent(contact.email)};end`;
+              }
             } else {
-              // Fallback for devices without Contacts API
+              // For desktop browsers, use vCard download
               const vcard = `BEGIN:VCARD
     VERSION:3.0
-    FN:Hamdi Dkhil
-    TEL:+21627360463
-    EMAIL:hamdi.dkhil@hotmail.fr
+    FN:${contact.name}
+    TEL;TYPE=CELL:${contact.phone}
+    EMAIL:${contact.email}
     END:VCARD`;
+
               const blob = new Blob([vcard], { type: 'text/vcard' });
               const url = window.URL.createObjectURL(blob);
               const link = document.createElement('a');
@@ -199,19 +205,48 @@
               document.body.removeChild(link);
               window.URL.revokeObjectURL(url);
             }
+
+            Swal.fire({
+              title: 'Success!',
+              text: isMobile ? 'Opening contacts app...' : 'Contact file downloaded successfully',
+              icon: 'success',
+              background: '#162949',
+              confirmButtonColor: "#4a90e2",
+              timer: 2000,
+              timerProgressBar: true
+            });
           } catch (error) {
             console.error('Error saving contact:', error);
+            // Fallback to vCard download if other methods fail
+            const vcard = `BEGIN:VCARD
+    VERSION:3.0
+    FN:Hamdi Dkhil
+    TEL:+21627360463
+    EMAIL:hamdi.dkhil@hotmail.fr
+    END:VCARD`;
+            
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'hamdi_dkhil.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+
             Swal.fire({
-              title: 'Error',
-              text: 'Could not save contact. Please try downloading the contact card.',
-              icon: 'error',
+              title: 'Contact Card Downloaded',
+              text: 'Please import the downloaded file to your contacts app',
+              icon: 'info',
               background: '#162949',
               confirmButtonColor: "#4a90e2"
             });
-          }}
+          }
+        }
       });
     }
-    </script>
-    <br><br><br><br><br><br>..
+   </script>
+    <br><br><br><br><br>
   </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramadan English Sessions - Bright Horizons</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Ramadan English Sessions - Bright Horizons" />
+  <meta name="description" content="Join our after-iftar English for communication sessions at Bright Horizons Center" />
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brighthorizons.netlify.app/" />
+  <meta property="og:title" content="English for communication" />
+  <meta property="og:description" content="Join our after-iftar English for communication sessions at Bright Horizons Center" />
+  <meta property="og:image" content="logo.png" />
+  <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://brighthorizons.netlify.app/" />
+  <meta property="twitter:title" content="English for communication" />
+  <meta property="twitter:description" content="Join our after-iftar English for communication sessions at Bright Horizons Center" />
+  <meta property="twitter:image" content="../logo.png" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Meta Tags Generated with https://metatags.io -->
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body class="bg-custom antialiased">
+  <!-- Header with Logo -->
+  <header>
+      <div class="max-w-7xl mx-auto flex justify-center">
+          <img src="../logo-long.png" alt="Bright Horizons Logo" class="rounded-lg animate_puls">
+      </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex flex-col items-center justify-center min-h-screen p-6">
+      <section class="max-w-lg w-full p-8 border border-gray-200 rounded-lg shadow-lg text-center">
+          <h2 class="text-3xl font-bold text-headline mb-4">Ramadan English Sessions</h2>
+          <p class="text-lg text-sub mb-2 text-body font-bold">"Enhance your English skills after iftar"</p>
+          <p class="text-sx text-sub mb-6 font-bold">"English For Communication A2 / B1"</p>
+
+          <!-- Application Form -->
+          <form id="application-form" class="space-y-6">
+              <div class="space-y-4">
+                  <div>
+                      <label for="fullName" class="block text-title font-medium mb-1">Full Name *</label>
+                      <input type="text" id="fullName" name="fullName" required class="w-full border-gray-300 rounded-md custom-input-container p-2">
+                  </div>
+
+                  <div>
+                      <label for="email" class="block text-title font-medium mb-1">Email Address (optional)</label>
+                      <input type="email" id="email" name="email" class="w-full border-gray-300 rounded-md custom-input-container p-2">
+                  </div>
+
+                  <div>
+                      <label for="phone" class="block text-title font-medium mb-1">Phone Number *</label>
+                      <input type="tel" id="phone" name="phone" required class="w-full border-gray-300 rounded-md custom-input-container p-2"
+                          placeholder="+216 XX XXX XXX">
+                  </div>
+
+              </div>
+
+              <hr>
+              <div class="text-center mt-6">
+                  <button type="submit" 
+                      class="px-6 py-3 bg-[#FA8E2C] text-white rounded-md hover:bg-[#E07B26] transition-colors"
+                      onmouseover="this.style.backgroundColor='#E07B26'"
+                      onmouseout="this.style.backgroundColor='#FA8E2C'">
+                      Submit Application
+                  </button>
+              </div>
+          </form>
+      </section>
+  </main>
+
+  <footer class="bg-[#162949] py-6 text-center mt-6">
+    <div class="max-w-lg mx-auto text-title">
+      <p>&copy; 2024 Bright Horizons Center. All rights reserved.</p>
+      <p>Contact Us: (216) 2736 0463 | hamdi.dkhil@hotmail.fr <br> <p>🇬🇧 🇹🇳 🇺🇸</p></p>
+      <div class="mt-4">
+        <a href="https://www.facebook.com/profile.php?id=100070364739783&mibextid=LQQJ4d" target="_blank"
+          class="text-title mx-2">Facebook</a>
+        <a href="https://www.instagram.com/bright_horizons1" target="_blank" class="text-title mx-2">Instagram</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>

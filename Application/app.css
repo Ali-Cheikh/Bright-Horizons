@@ -17,25 +17,22 @@
 .text-body {
     color: #FFFFFF;
 }
-
+/* Add these to your existing styles */
 .custom-input-container {
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    /* Equivalent to shadow-sm */
-    border: 1px solid #d1d5db;
-    /* Default border-gray-300 */
-    border-radius: 0.375rem;
-    /* Equivalent to rounded-md */
-    display: flex;
-    align-items: center;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    /* Smooth transitions */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
 }
 
-.custom-input-container:focus-within {
+.custom-input-container:focus {
     border-color: #FA8E2C;
-    /* Focus border color */
-    box-shadow: 0 0 0 2px rgba(250, 142, 44, 0.5);
-    /* Focus ring effect */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(250, 142, 44, 0.2);
+}
+
+select.custom-input-container option {
+    background-color: #162949;
+    color: white;
 }
 
 .radio-btn input:checked+span {
