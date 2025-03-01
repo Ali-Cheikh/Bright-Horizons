@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       // Google Apps Script URL - Update this with your new script URL
-      const url = "https://script.google.com/macros/s/AKfycbyv66Hn6gqPimuazp2F2a8TBbKOQ_e1aMzxbLAtIw1dydVrflDro4DVc3hM4tT3S6NA/exec";
+      const url = "https://script.google.com/macros/s/AKfycbwE7m-t1ddH1zybR7IHxz-JDYDwCDLFsbxY-4FyibOlqt3XthdFcakgKrZx0kqF9Xgf/exec";
 
       fetch(url, {
           method: "POST",
