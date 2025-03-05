@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="stylesheet" href="main.css">
+
 </head>
 <body class="bg-custom antialiased">
   <!-- Header with Logo -->
@@ -70,8 +71,6 @@
           <div class="p-2 "><img width="100%" src="https://scontent.ftun20-1.fna.fbcdn.net/v/t39.30808-6/476281780_662917799397039_3697639758742262985_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=dMeesqzMUogQ7kNvgHCjjZW&_nc_oc=AdiMoYAFugIB7UdD9JJDW58BffE7WGoeeXUrlrKysprbXH5VXr75K_adq8jBxKmLWdA&_nc_zt=23&_nc_ht=scontent.ftun20-1.fna&_nc_gid=A9rRFo59zLq_qy0831QXnaz&oh=00_AYAJh6NB20oTNrU2a7QuDWJS9jOvc0D4T_MHCmmk0h18sQ&oe=67CE85CA" alt="https://via.placeholder.com/400x300"></div>
           <div class="p-2 "><img width="100%" src="https://scontent.ftun20-1.fna.fbcdn.net/v/t39.30808-6/475799914_662912149397604_2654324394349193980_n.jpg?stp=cp6_dst-jpg_s720x720_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=5RYNf80a-G8Q7kNvgGmXp2g&_nc_oc=AdjQFBoIgzyV_fDyrD3bRyxs6GC9wXX9322jd02n4gR2MSpqooy5BWquoy-pDwEpbJQ&_nc_zt=23&_nc_ht=scontent.ftun20-1.fna&_nc_gid=A4hsRgNTv_UsnbZlnax2qLh&oh=00_AYAOyRnBUKz49b5Eh1kY0vSxQMXYb-bOTSO0ymlYVy532Q&oe=67CEAF75" alt="https://via.placeholder.com/400x300"></div>
       </div>
-    
-    
   </main>
 
   <!-- Footer -->
@@ -88,57 +87,15 @@
   </footer>
 
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script>
-  // swal alert for news 
-  Swal.fire({
-    title: 'English for communication',
-    text: 'Enhance your English skills after iftar',
-    imageUrl: 'https://scontent.ftun20-1.fna.fbcdn.net/v/t39.30808-6/481447864_683195520702600_8690655449005407217_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=v3Y_AT6wicYQ7kNvgHpDjNs&_nc_oc=AdhXkxLKMfCwIeVqADJhRqclZMAm8lAGcK20YsDcVgp5p9efmSucEbkWRy3k-TRgs-c&_nc_zt=23&_nc_ht=scontent.ftun20-1.fna&_nc_gid=AWQLGc-w10okq35CjDM53SY&oh=00_AYC94Uyq74c0AFFeHxWAjZiqH54BZk4nAq0_isXmsruUGw&oe=67CE9639',
-    showCloseButton: true,
-    background: '#162949',
-    color: '#FFFFFF',
-    titleColor: '#FA8E2C',
-    showCancelButton: true,
-    cancelButtonText: 'learn more',
-    cancelButtonColor: '#162990',
-    confirmButtonText: 'Register Now',
-    confirmButtonColor: '#FA8E2C'
-  }).then((result) => {
-    if (result.isConfirmed || result.isDismissed === true && result.dismiss === 'cancel') {
-      window.location = 'https://brighthorizons.netlify.app/Application/';
-    }
-  });
-
-  // Initialize the carousel
-  $(document).ready(function () {
-      // Initialize the carousel
-      $('.carousel').slick({
-          dots: true,
-          infinite: true,
-          speed: 1000,
-          slidesToShow: 3, // Show 3 images by default (for large screens)
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 2200,
-          pauseOnHover: true,
-          arrows: true,
-          responsive: [
-              {
-                  breakpoint: 768, // Adjust for screens smaller than 768px
-                  settings: {
-                      slidesToShow: 1, // Show 1 image per slide on smaller screens
-                      slidesToScroll: 1,
-                      autoplaySpeed: 2200,
-                      pauseOnHover: true,
-                  }
-              }
-          ]
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://brighthorizons.netlify.app/pentagon.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          new PentagonBackground();
+          caroucel();
       });
-  });
-
-</script>
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

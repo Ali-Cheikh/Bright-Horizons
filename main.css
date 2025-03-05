@@ -1,5 +1,6 @@
 body {
     overflow-x: hidden;
+    color: #FFFFFF; 
 }
 
 .bg-custom { background-color: #162949; }
