@@ -1,3 +1,22 @@
+// swal application canceled
+swal.fire({
+    title: 'Application Canceled',
+    text: 'The English for Communication Training is canceled due to lack of candidates',
+    icon: 'error',
+    background: '#162949',
+    color:'white',
+    confirmButtonColor: '#FA8E2C',
+    confirmButtonText: 'Close page',
+    allowOutsideClick: false,
+    customClass: {
+        container: 'bg-custom',
+        title: 'text-headline',
+    },}).then((result) => {
+      if (result.isConfirmed) {
+        window.location = 'https://google.com';
+      }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const canVibrate = window.navigator.vibrate;
     
