@@ -44,13 +44,18 @@ body {
     display: none;
 }
 
-a[type="tel"] {
-    width: 100%;
+a[type='tel'] {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
     background-color: #FA8E2C;
-    color: #ffffff;
-    font-weight: 600;
-    padding: 12px 0;
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
-}
+  }
+
+  a[type='tel']:hover {
+    background-color: #0f4077d2;
+  }
